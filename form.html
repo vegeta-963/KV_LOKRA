@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KV Lokra Student Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #00796b;
+      margin-bottom: 5px;
+    }
+
+    p.note {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="images/kvlogo.jpeg" alt="KV Logo" width="80">
+      <h2>KV Lokra Student Details Form</h2>
+      <p class="note">This form is strictly for students of <strong>Kendriya Vidyalaya Lokra</strong>.</p>
+    </div>
+
+    <form action="submit.php" method="post">
+      <label for="school">School Name:</label>
+      <input type="text" id="school" name="school" value="KV Lokra" readonly>
+
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="stream">Stream:</label>
+      <select id="stream" name="stream" required>
+        <option value="">--Select Stream--</option>
+        <option value="science">Science</option>
+        <option value="commerce">Commerce</option>
+        <option value="humanities">Humanities</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
